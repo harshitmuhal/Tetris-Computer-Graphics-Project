@@ -189,6 +189,14 @@
 #             return True
 #     return False
 #
+# # def update_score(nscore):
+# #     score = max_score()
+# #
+# #     with open('scores.txt', 'w') as f:
+# #         if int(score) > nscore:
+# #             f.write(str(score))
+# #         else:
+# #             f.write(str(nscore))
 #
 # def get_shape():
 #     global shapes, shape_colors
@@ -254,8 +262,32 @@
 #
 #     surface.blit(label, (sx + 10, sy - 30))
 #
+# # def draw_window(surface, grid, score, last_score ):
+# #     surface.fill((0, 0, 0))
+# #
+# #     pygame.font.init()
+# #     font = pygame.font.SysFont('comicsans', 60)
+# #     label = font.render('Tetris', 1, (255, 255, 255))
+# #
+# #     surface.blit(label, (top_left_x + play_width / 2 - (label.get_width() / 2), 30))
+# #
+# #     # current score
+# #     font = pygame.font.SysFont('comicsans', 30)
+# #     label = font.render('Score: ' + str(score), 1, (255,255,255))
+# #
+# #     sx = top_left_x + play_width + 50
+# #     sy = top_left_y + play_height/2 - 100
+# #
+# #     surface.blit(label, (sx + 20, sy + 160))
+# #     # last score
+# #     label = font.render('High Score: ' + last_score, 1, (255,255,255))
+# #
+# #     sx = top_left_x - 200
+# #     sy = top_left_y + 200
+# #
+# #     surface.blit(label, (sx + 20, sy + 160))
 #
-# def draw_window(surface):
+# def draw_window(surface,score):
 #     surface.fill((0, 0, 0))
 #     # Tetris Title
 #     font = pygame.font.SysFont('comicsans', 60)
@@ -263,6 +295,12 @@
 #
 #     surface.blit(label, (top_left_x + play_width / 2 - (label.get_width() / 2), 30))
 #
+#     # current score
+#     font = pygame.font.SysFont('comicsans', 30)
+#     label = font.render('Score: ' + str(score), 1, (255,255,255))
+#     sx = top_left_x + play_width + 50
+#     sy = top_left_y + play_height/2 - 100
+#     surface.blit(label, (sx + 20, sy + 160))
 #     for i in range(len(grid)):
 #         for j in range(len(grid[i])):
 #             pygame.draw.rect(surface, grid[i][j], (top_left_x + j * 30, top_left_y + i * 30, 30, 30), 0)
@@ -361,10 +399,10 @@
 #             change_piece = False
 #
 #             # call four times to check for multiple clear rows
-#             if clear_rows(grid, locked_positions):
-#                 score += 10
+#             # if clear_rows(grid, locked_positions):
+#             score += 10
 #
-#         draw_window(win)
+#         draw_window(win,score)
 #         draw_next_shape(next_piece, win)
 #         pygame.display.update()
 #
@@ -657,7 +695,7 @@ def max_score():
         score = lines[0].strip()
     return score
 
-def draw_window(surface, grid, score=0, last_score = 0):
+def draw_window(surface, grid, score, last_score ):
     surface.fill((0, 0, 0))
 
     pygame.font.init()
@@ -762,7 +800,8 @@ def main(win):  # *
             current_piece = next_piece
             next_piece = get_shape()
             change_piece = False
-            score += clear_rows(grid, locked_positions) * 10
+            # score += clear_rows(grid, locked_positions) * 10
+            score += 10
 
         draw_window(win, grid, score, last_score)
         draw_next_shape(next_piece, win)
@@ -780,7 +819,8 @@ def main_menu(win):  # *
     run = True
     while run:
         win.fill((0,0,0))
-        draw_text_middle(win, 'Press Any Key To Play', 60, (255,255,255))
+        text='Press Any Key To Play'
+        draw_text_middle(win, text, 60, (255,255,255))
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
