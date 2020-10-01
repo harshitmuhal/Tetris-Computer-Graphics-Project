@@ -329,7 +329,44 @@ pygame.display.set_caption('Tetris')
 main_menu(win)
 
 
-# In[ ]:
+# Report - 
+# • Does not require OpenGL. With many people having broken OpenGL setups, requiring OpenGL exclusively will cut into your 
+# user base significantly. Pygame uses either opengl, directx, windib, X11, linux frame buffer, and many other different backends... 
+# including an ASCII art backend! OpenGL is often broken on linux systems, and also on windows systems - which is why professional
+# games use multiple backends. • Multi-core CPUs can be used easily. With dual-core CPUs common, and 8 core CPUs cheaply available on 
+# desktop systems, making use of multi-core CPUs allows you to do more in your game. Selected pygame functions release the dreaded
+# python GIL, which is something you can do from C code. • Uses optimized C, and Assembly code for core functions. C code is often 
+# 10-20 times faster than python code, and assembly code can easily be 100x or more times faster than python code. • Comes with many 
+# Operating systems. Just an apt-get, emerge, pkg_add, or yast install away. No need to mess with installing it outside of your operating
+# systems package manager. Comes with binary installers (and uninstallers) for Windows or MacOS X.
+# • Truly portable. Supports Linux (pygame comes with most mainstream linux distributions), Windows (95,98,me,2000,XP,vista, 64bit windows etc), 
+# Windows CE, BeOS, MacOS,Mac OS X, FreeBSD, NetBSD, OpenBSD, BSD/OS, Solaris, IRIX, and QNX. 
+# • Its Simple and easy to use. Kids and adults make games with pygame.
+# • Does not require a GUI to use all functions. You can use pygame without a monitor - like if you want to use it just to process images,
+# get joystick input, or play sounds.
+# • A small amount of code. It does not have hundreds of thousands of lines of code for things you won't use anyway. The core is kept simple,
+# and extra things like GUI libraries, and effects are developed separately outside of pygame. 
+# 
+# Pros of Pygame 
+# 
+# • Easy Python syntax
+# • Pygame uses Python as its scripting language. Python is widely considered one of the easiest languages to grasp even for beginners.
+# • Very easy to understand 
+# • The API is very straightforward. 
+# • Good canvas system 
+# • Pygame has a drawing system that allows the user to create and draw on an unlimited number of canvases. 
+# 
+# Cons of Pygame 
+# 
+# • Pygame does not scale well with large project games, but it works well with small games and hobby projects. For small-scale game development,
+# pygame is a good option. 
+# • You might have a hard time finding out the basic functions that you require and their workings, but most of the functions in pygame has been 
+# incorporated as small apps across. You can get github programs related to Pygame. All those functions and their descriptions will be given in 
+# their code. 
+# • As I have said before, as there is not much description about the functions and their uses, Pygame also lacks the Pygame community and Pygame 
+# developers. Those who develop their small-scale applications in Pygame, put up in Github, but the reliability of those developers is still doubtful 
+# • Most of the game that we play, has a certain amount of Physics, AI, networking and inputs involved. In Pygame, we won't be having these complexities
+# as it is not supported 
 
 
 

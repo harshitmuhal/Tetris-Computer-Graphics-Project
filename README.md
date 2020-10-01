@@ -1,5 +1,9 @@
 # V Semester Computer Graphics Project
 
+# Current Functionalities- 
+- Main Menu.
+- Game interface with 6 types of shapes and grid.
+- Shapes can rotate.
 
 # Future Functionalities to be added : 
 
