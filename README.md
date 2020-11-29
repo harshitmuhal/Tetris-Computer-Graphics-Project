@@ -1,15 +1,13 @@
-# V Semester Computer Graphics Project
+# Tetris
 
-# Current Functionalities- 
-- Main Menu.
-- Game interface with 6 types of shapes and grid.
-- Shapes can rotate.
+# Main Menu
+<img src="images/main menu.png" height=600 width =600>
 
-# Future Functionalities to be added : 
+# Instructions Page
+<img src="images/instructions.png" height=600 width =600>
 
-- Add a window in which user can decide mode of difficulty easy ,medium and hard. With increasing difficulty speed at which objects fall will also increase.
-- Functionality for current score.
-- Functionality for Highest score.
-- Add functionality to display next shape that is going to be in the game on right side on game Window.
-- Add a feature in which user can customly increase speed for the current falling object only with  a down key press.
-- Add a feature to clear rows which are completely filled( this will allow user to play for more time by clearing filled rows from time to time).
+# Playing Field
+<img src="images/play.png" height=600 width =600>
+
+# Game over Window
+<img src="images/end.png" height=600 width =600>
